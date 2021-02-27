@@ -8,7 +8,7 @@ const { findInReactTree } = require('powercord/util');
 const { inject, uninject } = require('powercord/injector');
 const { React, getModule } = require('powercord/webpack');
 
-module.exports = class QuickStar extends Plugin {
+module.exports = class QuickRepeat extends Plugin {
   async startPlugin () {
     const classes = {
       ...await getModule([ 'icon', 'isHeader' ]),
@@ -18,7 +18,7 @@ module.exports = class QuickStar extends Plugin {
     const MiniPopover = await getModule(m => m.default && m.default.displayName === 'MiniPopover');
     inject('star-button', MiniPopover, 'default', (_, res) => {
       const props = findInReactTree(res, r => r && r.canReact && r.message);
-      if (!props || props.message.reactions.find(r => r.emoji.name === '⭐' && r.me)) {
+      if (!props || props.message.reactions.find(r => r.emoji.name === '🔁' && r.me)) {
         return res;
       }
 
@@ -27,13 +27,13 @@ module.exports = class QuickStar extends Plugin {
           className: classes.button,
           onClick: () => reactionManager.addReaction(props.channel.id, props.message.id, {
             animated: false,
-            name: '⭐',
+            name: '🔁',
             id: null
           })
         },
         React.createElement('img', {
           className: `emoji ${classes.icon}`,
-          src: '/assets/e4d52f4d69d7bba67e5fd70ffe26b70d.svg'
+          src: '/assets/f3fdb69431ef187e87cb909b0206cc93.svg'
         })
       ));
       return res;

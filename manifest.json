@@ -1,7 +1,7 @@
 {
-  "name": "QuickStar",
-  "version": "1.1.1",
-  "description": "Adds a star button to messages",
-  "author": "Bowser65",
+  "name": "QuickRepeat",
+  "version": "1.0.0",
+  "description": "Adds a repeat button to messages",
+  "author": "BlastoiseVeteran",
   "license": "OSL-3.0"
 }
